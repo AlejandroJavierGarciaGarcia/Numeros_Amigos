@@ -27,18 +27,19 @@ public class DriverProgram {
     }
 
     public void compare(Integer[] a, Integer[] b){
+        int countFriendlyNumbers = 0;
         for(int i = 0;i < a.length;i++){
             for(int j = 0; j < b.length; j++){
                 System.out.println("\n----------------------------\nNúmeros en comparacion: "+a[i]+" y "+b[j]);
                 boolean compare = perfectNumber(a[i], b[j]);
                 if(compare){
+                    countFriendlyNumbers++;
                     System.out.println("La posición"+i+" - "+a[i]+" del Areglo A y la " +
                             "posición "+j+" - "+b[j]+" del Arrglo B son numeros amigos");
-                }else {
-                    System.out.println(" Los números no son amigos");
                 }
             }
         }
+        System.out.println("\nLa cantidad de números amigos de los areglos es de "+countFriendlyNumbers);
     }
 
     public boolean perfectNumber(int num, int num2){
@@ -51,7 +52,6 @@ public class DriverProgram {
             }
             divisor=divisor+1;
         }
-        System.out.println("\nRESULTADO:");
         if (perfecto==num2) {
             isFriend = true;
         }
